@@ -68,7 +68,7 @@ git clone https://github.com/MaxHoffman05/TARSProject
    sudo service redis-server start
 ```
 
-7. **Run the Application**
+6. **Run the Application**
 
 ```bash
   # Navigate to the backend folder
@@ -86,7 +86,7 @@ You can also start the backend by running the bash script below:
    ./server.sh
 ```
 
-8. **View the frontend**
+7. **View the frontend**
    -Use a tool like Live Server in Vs Code to serve the front end files
 
 ## Storage
