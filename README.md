@@ -26,7 +26,7 @@ This project creates an interactive web interface to communicate with a virtual 
 1. **Clone the repository**
 
 ```bash
-git clone
+git clone https://github.com/MaxHoffman05/TARSProject
 ```
 
 2. **Set up virtual environment**
