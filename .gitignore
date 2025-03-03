@@ -1,0 +1,23 @@
+#Environment variables
+.env
+env/
+ENV/
+#Scripts
+*.sh
+#included bash scripts
+!server.sh
+
+#Python related
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+#User will need to create thier own config.js
+frontend/config.js
+frontend/node_modules/
+
+#misc
+.prettierignore

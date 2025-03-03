@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./assets/badge.svg" />
+    <!--Font cdn-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet" />
+
+    <!--Bootstrap cdn and custom css link-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="insert.js" defer></script>
+    <!-- Loads footer and navbar-->
+    <title>TARS Wisdom</title>
+  </head>
+  <body>
+    <!-- Navbar loaded from insert.js-->
+    <nav id="nav"></nav>
+
+    
+    <div id="tarsAnimation" style="letter-spacing: 1.8rem;"class="container-fluid">
+      <h1 class="titleTars">TARS</h1>
+    </div>
+
+    <div class="container-fluid">
+      <!-- Tars response container, also contains user response-->
+      <div id="tarsResponseWindow" class="container"></div>
+      <!-- Input form with controls-->
+
+      <div id="tarsContainer" class="container bg-body-secondary shadow-lg p-3 mt-2">
+        <!-- Radio Button Group to set TARS humor setting, this will tell the backend to send a different prompt to TARS depending on his humor level-->
+        <p class="humorDesc">TARS Humor Setting</p>
+        <div id="humorGroup" class="btn-group" role="group" aria-label="Tars Humor Setting">
+          <input type="radio" class="btn-check" name="humor" id="radioLow" autocomplete="off" value="low" />
+          <label class="btn btn-outline-success" for="radioLow">Low</label>
+          <input type="radio" class="btn-check" name="humor" id="radiodef" autocomplete="off" value="def" checked />
+          <label class="btn btn-outline-success" for="radiodef">Default</label>
+
+          <input type="radio" class="btn-check" name="humor" id="radioHigh" value="high" autocomplete="off" />
+          <label class="btn btn-outline-success" for="radioHigh">High</label>
+        </div>
+        <form onSubmit="return false;">
+          <div class="mb-3">
+            <!-- User input-->
+            <div id="inputText" class="form-text">Ask TARS a question....</div>
+            <input type="text" class="form-control" id="inputTars" aria-describedby="inputTars" />
+          </div>
+        </form>
+        <!-- Button Controls for Submitting Question, Start new Chat, and View Chat History-->
+        <div class="container p-0">
+          <div class="row">
+            <div class="col">
+              <button id="submitTars" type="submit" class="btn btn-success">Submit Question</button>
+            </div>
+            <div class="col d-flex flex-column ">
+              <button id="deleteHistory" type="submit" class="btn btn-info btn-sm mb-1">Start New Chat</button>
+              <button id="viewHistory" type="submit" class="btn btn-info btn-sm">View History</button>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    <div class="githubText">
+      <p>Curious about this website's code? visit this <a href="" id="link">link</a> to view the Github Repository!</p>
+    </div>
+
+
+    <!-- Modal for chat history-->
+    <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel">
+      <div class="modal-dialog modal-xl  modal-fullscreen-md-down">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="historyModalLabel">Chat History</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="modalDynamic">
+                <!-- Where we insert the chat history with JavaScript -->
+                  <ul id="historyList"></ul>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+ 
+    <!-- Footer loaded from insert.js-->
+    <footer id="footer" class="footer"></footer>
+    <!-- JavaScript for calling backend methods-->
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>

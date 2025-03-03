@@ -1,0 +1,6 @@
+pip install python-dotenv
+pip install groq
+pip install "fastapi[standard]"
+pip install fastapi[all]
+pip install redis
+sudo apt install redis-server
