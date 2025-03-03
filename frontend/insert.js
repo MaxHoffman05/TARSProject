@@ -1,6 +1,8 @@
 /*
-Script to load the footer
-
+TARS Project - insert.js
+Date: 2/24/2025 - 3/3/2025
+Author: Max Hoffman
+Purpose: Script to load the footer and nav bar HTML elements
 */
 
 fetch("footer.html")

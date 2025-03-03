@@ -1,6 +1,6 @@
 /*
 TARS Project
-Date: 2/24/2025 -
+Date: 2/24/2025 - 3/3/2025
 Author: Max Hoffman
 Purpose: Handles the front end logic for the TARS website
 */
@@ -34,7 +34,8 @@ function getHumorSetting() {
       return element.value;
     }
   }
-  return "you should never see this";
+  //should never get here, but just in case something is changed in the HTML side default will always be returned
+  return "def";
 }
 
 //submits user question on enter
@@ -89,7 +90,7 @@ function sendQuestion() {
   }
 }
 
-//method deletes chat_history variable stored in redis, also clears response window
+//method deletes chat_history variable stored in redis by sending a delete request to the backend, also clears response window on the frontend side
 function deleteHistory() {
   fetch(BACKEND_URL + "/del", {
     method: "DELETE",
@@ -159,6 +160,7 @@ function viewHistory() {
   newModal.show();
 }
 
+//dynamically creates Bootstrap table based on JSON data from backend from the /history route for Bootstrap modal
 function parseJSON(jsonList) {
   const data = JSON.parse(jsonList);
 
